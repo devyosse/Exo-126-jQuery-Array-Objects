@@ -15,17 +15,40 @@ for(let i in arrObj) {
 
     // J'accéde à une propriété particuliére de mon objet ,ici l'age
     console.log("age = " + arrObj[i].age);
+
+    console.log("avatar = " + arrObj[i].avatar);
 }
 
 //Autre méthode : utilisation de forEach
 arrObj.forEach(function(arr) {
     //Afficher la propriété age pour chaque objet contenu dans mon tableau
-   console.log("Resultat avec foreach = " + arr.age);
+    console.log("Resultat avec foreach = " + arr.age);
 });
 
 //Méthode utilisant jQuery
 $.each(arrObj, function(index, value) {
     //Afficher la propriété age pour chaque objet contenu dans mon tableau
-   console.log("Affichage age utilisant jQuery = " + value.age);
+    console.log("Affichage age utilisant jQuery = " + value.age);
 });
+
+let index = 0;
+let btnBefore = $("#beforebutton");
+let btnAfter = $("#afterbutton");
+
+$("#age").html("age = " + arrObj[index].age);
+
+$("#nom").html("nom = " + arrObj[index].person);
+
+$('#avatar').attr("src", arrObj[index].avatar);
+
+function suivant(){
+    $("#age").html("age = " + arrObj[1].age);
+
+    $("#nom").html("nom = " + arrObj[1].person);
+
+    $('#avatar').attr("src", arrObj[1].avatar);
+
+    btnAfter.addEventListener("click");
+    btnBefore.addEventListener("click")
+}
 
